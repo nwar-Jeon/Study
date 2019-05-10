@@ -58,3 +58,4 @@ supportFragmentManager.beginTransaction().add(fragment).commit()
 //프래그먼트가 액티비티에 추가된 후, 프래그먼트로 동작.
 ```
 
+  
