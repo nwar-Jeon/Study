@@ -2,6 +2,7 @@ package com.nwar.individual.viewpagerwithbottomnavigation
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         val fragment1 = Fragment1()
         val fragment2 = Fragment2()
         val fragment3 = Fragment3()
+
         supportFragmentManager.beginTransaction().add(R.id.fragment_container,fragment1).commit()
         navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
