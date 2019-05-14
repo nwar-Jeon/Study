@@ -1,5 +1,6 @@
 package com.nwar.individual.actionbar
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -20,7 +21,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.menu_add -> showToast("add")
+            R.id.menu_add -> {showToast("add")
+                val intent = Intent(this,CoordinatorTest::class.java)
+                startActivity(intent)
+            }
             R.id.menu_search -> showToast("search")
             R.id.menu_setting -> showToast("setting")
         }
