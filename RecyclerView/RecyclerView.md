@@ -63,3 +63,10 @@ notifyDataSetChanged() // 리사이클러뷰의 데이터가 변경되었을때.
 notifyItemMoved(from:Int, to:Int) // from아이템을 to로 이동
 ```
 
+```xml
+<android.support.v7.widget.RecyclerView>
+  tools:listitem="@layout/item"
+</android.support.v7.widget.RecyclerView>
+<!--  리사이클러뷰에 아이템 적용된 상태를 미리보기 하도록 함. -->
+```
+
