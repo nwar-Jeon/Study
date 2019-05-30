@@ -10,20 +10,30 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 
+const val WHITE = 0
+const val BLACK = 1
+const val RED = 2
+const val GREEN = 3
+const val BLUE = 4
+
 class CustomCanvas(context : Context, attr : AttributeSet?) : View(context,attr) {
     constructor(context : Context) : this(context, null)
     var strokeWidth : Int = 10
     var drawX : Float? = null
     var drawY : Float? = null
-    val WHITE = 0
-    val BLACK = 1
-    val RED = 2
-    val GREEN = 3
-    val BLUE = 4
     var color = Paint()
     var mCanvas : Canvas? = null
     var img : Bitmap? = null
-    init { setColor(WHITE) }
+    init {
+        setColor(WHITE)
+        setStrokeWidthF(strokeWidth)
+        color.style = Paint.Style.FILL
+    }
+
+    fun setStrokeWidthF(width : Int){
+        strokeWidth = width
+        color.strokeWidth = width.toFloat()
+    }
 
     fun setColor(color : Int){
         when(color){
@@ -41,14 +51,15 @@ class CustomCanvas(context : Context, attr : AttributeSet?) : View(context,attr)
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        when(event?.action){
-            MotionEvent.ACTION_MOVE -> Log.e("Move",event?.x.toString() + event?.y.toString())
-            else -> Log.e("Event", event?.x.toString() + event?.y.toString())
-        }
+        val tempX = drawX
+        val tempY = drawY
         drawX = event?.x
         drawY = event?.y
         if(drawX!=null&&drawY!=null) {
-            mCanvas?.drawCircle(drawX as Float, drawY as Float, strokeWidth.toFloat(),color)
+            when(event?.action){
+                MotionEvent.ACTION_MOVE -> mCanvas?.drawLine(tempX as Float, tempY as Float, drawX as Float, drawY as Float, color)
+                else -> mCanvas?.drawCircle(drawX as Float, drawY as Float, strokeWidth.toFloat()/2F,color)
+            }
         }
         invalidate()
         return super.onTouchEvent(event)
@@ -59,6 +70,5 @@ class CustomCanvas(context : Context, attr : AttributeSet?) : View(context,attr)
         this.mCanvas = Canvas()
         mCanvas?.setBitmap(img)
         mCanvas?.drawColor(Color.WHITE)
-
     }
 }
