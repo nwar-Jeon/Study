@@ -34,3 +34,18 @@ init{
 
 ```
 
+### View
+
+```kotlin
+View 상속
+class CustomView(context : Context, attr: AttributeSet?) : View(context,attr){
+  constructor(content : Context) : this(context,null)
+  override fun onDraw(canvas : Canvas?){
+    
+  }
+  override fun onTouchEvent(event : Event?){
+    // MotionEvent.ACTION_DOWN, ACTION_UP, ACTION_MOVE 등으로 터치이벤트 처리
+  }
+}
+```
+
