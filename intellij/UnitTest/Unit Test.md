@@ -72,5 +72,11 @@ public class Test{
 
 + 해당 테스트 클래스 안의 메소드 테스트 전, 후에 각각 실행되는 어노테이션.
 
+### @Ignore
+
++ Test를 무시함(메서드 단위.)
+
+### Flow
+
 ![hjkwon-140729-JUnit_-11](D:\Github\Android\Study\intellij\UnitTest\hjkwon-140729-JUnit_-11.png)
 
