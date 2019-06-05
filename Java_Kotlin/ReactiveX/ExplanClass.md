@@ -21,8 +21,6 @@
 | RxJava 2.x(from() 세분화) | fromArray(), fromIterable(), fromCallable(), fromFuture(), frompublisher() |
 | 기타                      | interval(), range(), timer(), defer() 등                     |
 
-
-
 ### Flowable
 
 + Observable + backpressure buffer(backpressure 이슈 대응.)
