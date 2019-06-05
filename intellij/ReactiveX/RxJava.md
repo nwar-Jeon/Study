@@ -30,7 +30,7 @@ public static void main(String args[]){
 
 ### 마블 다이어그램
 
-![marblediagram](D:\Github\Android\Study\intellij\ReactiveX\marblediagram.png)
+![marblediagram](.\marblediagram.png)
 
 ### Function
 
