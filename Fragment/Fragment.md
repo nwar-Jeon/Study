@@ -5,7 +5,7 @@ Fragment
 
 + 액티비티와 마찬가지로, 액티비티가 액티비티 매니저를 통해 동작하듯, 프래그먼트는 프래그먼트 매니저를 통해 동작함.
 
-![프래그먼트 작동](D:\Github\Android\Study\Fragment\프래그먼트 작동.png)
+![프래그먼트 작동](.\프래그먼트 작동.png)
 
 ### Fragment method
 
@@ -49,7 +49,7 @@ public abstract boolean executePendingTransactions()
 10. onDestroy() 프래그먼트 정리(완전히 삭제.)
 11. onDetach() 액티비티와의 연결 끊음.
 
-![fragment](D:\Github\Android\Study\Fragment\fragment.jpg)
+![fragment](.\fragment.jpg)
 
 ```kotlin
 val fragment = xxxFragment()

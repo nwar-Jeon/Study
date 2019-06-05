@@ -78,5 +78,5 @@ public class Test{
 
 ### Flow
 
-![hjkwon-140729-JUnit_-11](D:\Github\Android\Study\intellij\UnitTest\hjkwon-140729-JUnit_-11.png)
+![hjkwon-140729-JUnit_-11](.\hjkwon-140729-JUnit_-11.png)
 
