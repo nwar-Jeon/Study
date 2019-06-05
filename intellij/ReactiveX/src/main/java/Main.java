@@ -1,9 +1,11 @@
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
 public class Main {
+    static int a = 5;
     public static void main(String[] args){
         Function<String, Integer> function = str -> Integer.parseInt(str);
         Integer integer = 5;
@@ -15,9 +17,9 @@ public class Main {
         Observable.just(integer.toString()).subscribe(System.out::println);
 
         Observable<Integer> observable = Observable.create((ObservableEmitter<Integer> emitter) -> {
-            emitter.onNext(5);
-            emitter.onNext(10);
-            emitter.onNext(15);
+            emitter.onNext(getA());
+            emitter.onNext(getA());
+            emitter.onNext(getA());
             emitter.onComplete();
         });
         observable.subscribe(System.out::println);
@@ -27,5 +29,12 @@ public class Main {
                 System.out.println("result : " + integer);
             }
         });
+
+        Flowable<Integer> flow = Flowable.range(1, 1000);
+        flow.subscribe(System.out::println);
+    }
+    static int getA(){
+        a+=5;
+        return a;
     }
 }
