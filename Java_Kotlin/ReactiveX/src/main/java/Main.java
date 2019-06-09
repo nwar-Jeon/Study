@@ -14,7 +14,7 @@ public class Main {
         } catch (Exception e){
             System.out.println("exception!");
         }
-        Observable.just(integer.toString()).subscribe(System.out::println);
+        Observable.just(integer.toString()).subscribe(System.out::println); //.subscribe(data -> System.out.println(data);
 
         Observable<Integer> observable = Observable.create((ObservableEmitter<Integer> emitter) -> {
             emitter.onNext(getA());
