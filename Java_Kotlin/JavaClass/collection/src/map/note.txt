@@ -1,0 +1,1 @@
+HashTable의 경우는, Map과 같지만, thread-safe가 추가된 형식. 여러 쓰레드에서 접근 할 경우, 상호배제.
