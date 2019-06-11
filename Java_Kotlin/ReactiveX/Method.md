@@ -28,3 +28,13 @@ public interface ObservableOnSubscribe<T>{
 }
 ```
 
+##### ※주의사항
+
++ 구독 해지 시 등록된 콜백을 모두 해제해야함. (잠재적 메모리 누수 가능성.)
++ 구독자가 구독하는 동안에만 onNext, onComplete 이벤트를 호출해야함.
++ 에러는 오직 onError 이벤트로만 에러를 전달해야함.
++ 배압(back pressure)를 직접 처리해야함.
+
+### fromArray()
+
++ 단일 데이터가 아닐 때 사용

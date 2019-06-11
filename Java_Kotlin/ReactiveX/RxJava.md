@@ -32,6 +32,40 @@ public static void main(String args[]){
 
 ![marblediagram](.\marblediagram.png)
 
+--------------------------------------
+
++ #### 리액티브 프로그래밍에서의 권장사항.
+
+1. 메서드 레퍼런스 (System.out::println와 같은 형태) 사용할 수 있는지 확인
+2. 람다 표현식 이용할 수 있는지 확인
+3. 익명 객체나 멤버 변수로 표현.
+
+이를 우선순위로 고려하여 사용여부 판단하기.
+
+```java
+Observable<Integer> o = Observable.create((ObservableEmitter<Interger> emit) ->{
+  emit.onNext(10);
+  emit.onNext(20);
+  emit.onComplete();
+})
+  
+//1. 메서드 레퍼런스
+  o.subscribe(System.out::println);
+
+//2. 람다 표현식
+  o.subscribe(v -> System.out.println(v));
+
+//3. 익명 객체로 표현
+o.subscribe(new Consumer<Integer>(){
+  @Override
+  public void accept(Integer v) throws Exception{
+    System.out.println(v);
+  }
+})
+```
+
+
+
 ### Function
 
 ```java

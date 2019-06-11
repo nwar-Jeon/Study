@@ -27,6 +27,13 @@
 + + backpressure(배압)?
   + 생산자의 생성속도(element 생성)가 소비자의 소비속도(element를 꺼내감)보다 빠르면, 언젠가 OutOfMemoryException이 발생할 수 있음.
 
+### Disposable
+
++ void dispose()
+  + 데이터 발행을 종료하도록 구독 해지
++ boolean isDisposed()
+  + 구독이 해지되었는지(데이터를 더 이상 발행하지 않는지) 확인
+
 ### Maybe
 
 ### Single
