@@ -5,10 +5,27 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.*;
 
 public class Main {
     static int a = 5;
     public static void main(String[] args){
+        baseTest();
+
+        fromArrayTest();
+
+        iteratorTest();
+
+        callableTest();
+
+        futureTest();
+
+        Flowable<Integer> flow = Flowable.range(1, 10);
+        flow.subscribe(System.out::println);
+    }
+    static void baseTest(){
         Observable<Integer> observable = Observable.create((ObservableEmitter<Integer> emitter) -> {
             emitter.onNext(a+=5);
             emitter.onNext(a+=5);
@@ -23,13 +40,6 @@ public class Main {
                 System.out.println("result : " + integer);
             }
         });
-
-        fromArrayTest();
-
-        iteratorTest();
-
-        Flowable<Integer> flow = Flowable.range(1, 10);
-        flow.subscribe(System.out::println);
     }
 
     static void fromArrayTest(){
@@ -47,6 +57,44 @@ public class Main {
         arr.add("d");
 
         Observable<String> observable = Observable.fromIterable(arr);
+        observable.subscribe(System.out::println);
+
+        Set<String> set = new HashSet<>();
+        set.add("s");
+        set.add("e");
+        set.add("t");
+        observable = Observable.fromIterable(set);
+        observable.subscribe(System.out::print);
+
+        System.out.println();
+
+        BlockingQueue<String> queue = new ArrayBlockingQueue<String>(100);
+        queue.add("q");
+        queue.add("ue");
+        queue.add("ue");
+        observable = Observable.fromIterable(queue);
+        observable.subscribe(System.out::print);
+        System.out.println();
+    }
+
+    static void callableTest(){
+        Callable<String> callable = () -> {
+            Thread.sleep(1000);
+            return "Callable";
+        };
+
+        Observable<String> observable = Observable.fromCallable(callable);
+        observable.subscribe(System.out::println);
+
+
+    }
+
+    static void futureTest(){
+        Future<String> future = Executors.newSingleThreadExecutor().submit(() ->{
+            Thread.sleep(1000);
+            return "future";
+        });
+        Observable<String> observable = Observable.fromFuture(future);
         observable.subscribe(System.out::println);
     }
 }

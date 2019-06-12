@@ -10,14 +10,15 @@ public class Student {
 
     @Override
     public int hashCode() {
-        return super.hashCode() + age;
+        return name.hashCode() + age;
     }
 
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof Student){
             Student s = (Student)obj;
-            return this.name.equals(s.name) && this.age==s.age;
+            return true;
+            //return this.name.equals(s.name) && this.age==s.age;
         } else{
             return false;
         }

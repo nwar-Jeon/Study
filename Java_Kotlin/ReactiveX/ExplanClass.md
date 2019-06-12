@@ -37,3 +37,38 @@
 ### Maybe
 
 ### Single
+
++ Observable의 특수한 형태. Observable에서 변환
++ 데이터를 오로지 하나만 발행함.
++ onNext, onComplete, onError가 있던 Observable에 반해, Single클래스는 onNext와 onComplete를 통합한onSuccess, onError만 존재.
++ Observable에서 변환하는 방법
+
+```java
+// 앞에서 공부한 Observable을 Single 객체로 변환하기
+Observable<String> observable = Observable.just("Single");
+Single.fromObservable(observable)
+	.subscribe(System.out::println); //출력결과 : Single
+
+// single()함수를 통해 Single 객체 생성하기
+Observable.just("Single")
+  .single("default")
+  .subscribe(System.out::println); // 출력결과 : Single
+
+// first()함수를 통해 Single 객체 생성하기
+String[] color = {"Red", "Blue", "Gold"};
+Observable.fromArray(color)
+  .first("default1")
+  .subscribe(System.out::println); // 출력결과 : Red
+
+// empty Observable에서 Single객체 생성하기
+Observable.empty()
+  .single("default2")
+  .subscribe(System.out::println); // 출력결과 : default2
+
+// take()함수에서 Single객체 생성하기
+Observable.just("string1", "string2")
+  .take(1)
+  .single("default")
+  .subscribe(System.out::println); // 출력결과 : string1
+```
+

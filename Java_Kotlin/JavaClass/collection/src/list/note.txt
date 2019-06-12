@@ -1,0 +1,1 @@
+List 인터페이스를 구현한 클래스 중, ArrayList와 Vector는 유사한데, 차이점은 Vector는 Thread-safe함.
