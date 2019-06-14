@@ -34,8 +34,6 @@
 + boolean isDisposed()
   + 구독이 해지되었는지(데이터를 더 이상 발행하지 않는지) 확인
 
-### Maybe
-
 ### Single
 
 + Observable의 특수한 형태. Observable에서 변환
@@ -71,4 +69,32 @@ Observable.just("string1", "string2")
   .single("default")
   .subscribe(System.out::println); // 출력결과 : string1
 ```
+
+### Maybe
+
++ Single + onComplete.
++ 데이터를 발행하지 않거나, 하나만 발행한다.
+
+### Subject
+
++ 차가운 Observable을 뜨거운 Observable로 변환.
+
++ Subject Sub Class
+
++ + ##### AsyncSubject
+
+  + + onComplete() 직전에 발행한 데이터만 발행하고 종료.
+
+![AsyncSubject](./image/AsyncSubject.png)
+
++ + ##### BehaviorSubject
+
+  + + 구독하면 가장 최근값과, 이후 발행되는 데이터를 발행.
+
+![BehaviorSubject](./image/BehaviorSubject.png)
+
++ + PublishSubject
+  + + 구독 이후 발행하는 데이터를 발행함.
+
+![PublishSubject](./image/PublishSubject.png)
 

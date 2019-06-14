@@ -30,7 +30,7 @@ public static void main(String args[]){
 
 ### 마블 다이어그램
 
-![marblediagram](.\marblediagram.png)
+![marblediagram](./image/marblediagram.png)
 
 --------------------------------------
 
@@ -64,7 +64,10 @@ o.subscribe(new Consumer<Integer>(){
 })
 ```
 
+### 뜨거운 Observable
 
++ 차가운 Observable은 subscribe를 호출해야만 데이터 발행을 시작한다.
++ 뜨거운 Observable은 구독한 시점부터 Observable에서 발행한값을 받으며, 항상 데이터를 발행하고 있음.
 
 ### Function
 

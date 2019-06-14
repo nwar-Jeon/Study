@@ -4,7 +4,7 @@
 + 1~10개의 값을 넣을 수 있음.
 + 단, 데이터형은 모두 같아야함.
 
-![just_marble_diagram](.\just_marble_diagram.png)
+![just_marble_diagram](./image/just_marble_diagram.png)
 
 ### subscribe()
 
