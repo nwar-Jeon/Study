@@ -38,3 +38,17 @@ public interface ObservableOnSubscribe<T>{
 ### fromArray()
 
 + 단일 데이터가 아닐 때 사용
+
+### fromIterable()
+
++ Iterator 인터페이스를 사용하여 복수 데이터일 때 사용.
++ Set 컬렉션에도 사용.
+
+### fromCallable()
+
++ 비동기 프로그래밍을 위한 함수.
+
+### fromFuture()
+
++ 비동기 계산의 결과를 구할 때 사용.
+

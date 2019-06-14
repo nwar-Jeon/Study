@@ -93,8 +93,17 @@ Observable.just("string1", "string2")
 
 ![BehaviorSubject](./image/BehaviorSubject.png)
 
-+ + PublishSubject
++ + ##### PublishSubject
+
   + + 구독 이후 발행하는 데이터를 발행함.
 
 ![PublishSubject](./image/PublishSubject.png)
 
++ + ##### ReplaySubject
+
+  + + 차가운 Observable처럼 동작함
+    + 데이터의 처음부터 끝까지 발행하는 것을 보장
+    + 마치, 테이프로 녹음해두고, 구독자가 오면 처음부터 재생하는 것과 같음
+    + 메모리 누수 가능성을 염두해야함
+
+![ReplaySubject](./image/ReplaySubject.png)

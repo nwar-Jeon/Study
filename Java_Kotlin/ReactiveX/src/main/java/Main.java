@@ -24,6 +24,8 @@ public class Main {
 
         Flowable<Integer> flow = Flowable.range(1, 10);
         flow.subscribe(System.out::println);
+
+        multipleTable();
     }
     static void baseTest(){
         Observable<Integer> observable = Observable.create((ObservableEmitter<Integer> emitter) -> {
@@ -95,6 +97,15 @@ public class Main {
             return "future";
         });
         Observable<String> observable = Observable.fromFuture(future);
+        observable.subscribe(System.out::println);
+    }
+
+    static void multipleTable(){
+        Function<Integer, Observable<Integer>> function = i -> Observable.range(1,9)
+                .map(j -> i*j);
+
+        Observable<Integer> observable = Observable.range(1,9)
+                .flatMap(function);
         observable.subscribe(System.out::println);
     }
 }
