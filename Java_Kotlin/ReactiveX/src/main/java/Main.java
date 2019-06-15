@@ -101,7 +101,7 @@ public class Main {
     }
 
     static void multipleTable(){
-        Function<Integer, Observable<Integer>> function = i -> Observable.range(1,9)
+        Function<Integer, Observable<String>> function = i -> Observable.range(1,9)
                 .map(j -> i*j);
 
         Observable<Integer> observable = Observable.range(1,9)
