@@ -1,4 +1,5 @@
 import io.reactivex.Flowable;
+import io.reactivex.Maybe;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.functions.Consumer;
@@ -6,6 +7,7 @@ import io.reactivex.functions.Function;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.*;
 
@@ -26,6 +28,8 @@ public class Main {
         flow.subscribe(System.out::println);
 
         multipleTable();
+
+        dataQuery();
     }
     static void baseTest(){
         Observable<Integer> observable = Observable.create((ObservableEmitter<Integer> emitter) -> {
@@ -112,5 +116,35 @@ public class Main {
                 .flatMap(num -> Observable.range(1,9)
                 .map(row -> num + " * " + row + " = " + num*row));
         source.subscribe(System.out::println);
+    }
+
+    static void dataQuery(){
+        List<Pair<String, Integer>> arr = new ArrayList<>();
+        arr.add(new Pair<>("TV", 1000));
+        arr.add(new Pair<>("TV", 2500));
+        arr.add(new Pair<>("ETC", 2000));
+
+        Maybe<Integer> observable = Observable.fromIterable(arr)
+                .filter(item -> item.getName().equals("TV"))
+                .map(item2 -> item2.getPrice())
+                .reduce((i1, i2) -> i1 + i2);
+        observable.subscribe(System.out::println);
+    }
+}
+
+class Pair<T,E>{
+    T name;
+    E price;
+    Pair(T name, E price){
+        this.name = name;
+        this.price = price;
+    }
+
+    public T getName() {
+        return name;
+    }
+
+    public E getPrice() {
+        return price;
     }
 }
