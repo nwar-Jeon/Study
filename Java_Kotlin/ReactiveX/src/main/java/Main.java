@@ -102,10 +102,15 @@ public class Main {
 
     static void multipleTable(){
         Function<Integer, Observable<String>> function = i -> Observable.range(1,9)
-                .map(j -> i*j);
+                .map(j -> i + " * " + j + " = " + j*i);
 
-        Observable<Integer> observable = Observable.range(1,9)
+        Observable<String> observable = Observable.range(1,9)
                 .flatMap(function);
         observable.subscribe(System.out::println);
+
+        Observable<String> source = Observable.range(1,9)
+                .flatMap(num -> Observable.range(1,9)
+                .map(row -> num + " * " + row + " = " + num*row));
+        source.subscribe(System.out::println);
     }
 }
