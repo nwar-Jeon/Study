@@ -2,6 +2,10 @@ import io.reactivex.Maybe;
 import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 public class ReactiveOperatorTest {
     static void mapTest(){
         Integer[] arr = {1,2,3,4,5,6,7,8,9,10};
@@ -49,11 +53,62 @@ public class ReactiveOperatorTest {
         observable.subscribe(System.out::println);
     }
 
+    static void intervalTest(){
+        Observable<Long> observable = Observable.interval(0L,100L, TimeUnit.MILLISECONDS)
+                .map(i -> i * 100)
+                .take(10);
+        CommonUtils.start();
+        observable.subscribe(data -> System.out.println((System.currentTimeMillis() - CommonUtils.startTime) + " | value = " + data));
+        CommonUtils.sleep(10000);
+    }
+
+    static void timerTest(){
+        Observable<String> observable = Observable.timer(100L, TimeUnit.MILLISECONDS)
+                .map(notUsed ->{
+                    return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")
+                            .format(new Date());
+                });
+        CommonUtils.start();
+        observable.subscribe(data -> System.out.println((System.currentTimeMillis() - CommonUtils.startTime) + " | value = " + data));
+        CommonUtils.sleep(1000);
+    }
+
+    static void rangeTest(int range){
+        Observable<Integer> observable = Observable.range(1,range)
+                .filter(data -> data % 2 == 0)
+                .map(i -> i+1);
+        observable.subscribe(data -> System.out.println(data));
+    }
+
+    static void intervalRangeTest(int start, int count, int initDelay, int delay){
+        Observable<Long> observable = Observable.intervalRange(start, count,initDelay, delay, TimeUnit.MILLISECONDS);
+        observable.subscribe(data -> System.out.println(data));
+        CommonUtils.sleep(initDelay + delay * count + 100);
+    }
+
     public static void main(String[] agrs){
-        mapTest();
+        /*mapTest();
         funtionInterfaceTest();
         flatMapTest(5);
         etcTest();
         reduceTest();
+        intervalTest();
+        timerTest();
+        rangeTest(5);*/
+        intervalRangeTest(1,10,0,1000);
+    }
+}
+
+class CommonUtils{
+    public static long startTime;
+    public static void start(){
+        startTime = System.currentTimeMillis();
+    }
+    public static void sleep(int milli){
+        try{
+            Thread.sleep(milli);
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
     }
 }
