@@ -3,13 +3,11 @@ import java.io.*;
 
 public class ClsTest {
     public static void main(String[] atgs){
-        String fileRoot = "D:/Github/Android/Study/Java_Kotlin/JavaClass/FileIOStudy/files/file.txt";
-        String fileRoot2 = "D:/Github/Android/Study/Java_Kotlin/JavaClass/FileIOStudy/files/file2.txt";
-        try{
-            imageTest2();
-        } catch(Exception e){
-            e.printStackTrace();
-        }
+        fileTest();
+    }
+
+    static void fileTest(){
+        System.out.println(new File("d:/temp/temp.txt").exists());
     }
 
     static void imageTest1() throws Exception{
