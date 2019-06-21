@@ -49,7 +49,7 @@ val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
 
 recyclerView.adapter = adapter
 recyclerView.layoutManager = lm
-recyclerView.setHasFixedSize(true) // 호출.
+recyclerView.setHasFixedSize(true)
 ```
 
 ### else

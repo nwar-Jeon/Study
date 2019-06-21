@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1565999-e992-4300-9056-022c483d9115" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Android/CustomView/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Android/CustomView/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Android/RecyclerView/RecyclerView.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Android/RecyclerView/RecyclerView.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ReactiveX/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ReactiveX/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ReactiveX/src/main/java/ReactiveOperatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ReactiveX/src/main/java/ReactiveOperatorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,13 +19,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
+            <state relative-caret-position="171">
               <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
               <folding>
                 <element signature="e#85#86#0" expanded="true" />
                 <element signature="e#111#112#0" expanded="true" />
                 <element signature="e#140#141#0" expanded="true" />
-                <element signature="e#205#206#0" expanded="true" />
+                <element signature="e#213#214#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,12 +47,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ClsTest.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="380" />
-    <option name="y" value="49" />
+    <option name="x" value="123" />
+    <option name="y" value="13" />
     <option name="width" value="1424" />
     <option name="height" value="974" />
   </component>
@@ -60,8 +63,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -69,14 +70,21 @@
               <item name="FileIOStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="FileIOStudy" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="FileIOStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FileIOStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560843485193" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561093092307" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -118,9 +126,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="380" y="49" width="1424" height="974" extended-state="0" />
+    <frame x="123" y="13" width="1424" height="974" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34750733" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36290324" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -160,15 +169,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/ClsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
+        <state relative-caret-position="171">
           <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
           <folding>
             <element signature="e#85#86#0" expanded="true" />
             <element signature="e#111#112#0" expanded="true" />
             <element signature="e#140#141#0" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
           </folding>
         </state>
       </provider>
