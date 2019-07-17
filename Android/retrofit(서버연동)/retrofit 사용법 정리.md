@@ -6,8 +6,8 @@
 
 ```c
 dependencies{
-    implementation 'com.swareup.retrofit2:retrofit:{version}'
-    implementation 'com.sqareup.retrofit2:converter-gson:{version}'
+    implementation 'com.squareup.retrofit2:retrofit:{version}'
+    implementation 'com.squareup.retrofit2:converter-gson:{version}'
 }
 ```
 
@@ -35,7 +35,7 @@ public interface 인터페이스명{
 ```java
 public class ServiceGenerator {
 
-    private static final String URL = "http://ec2.istruly.sexy:1234/docs#/";
+    private static final String URL = "BaseURL";
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
@@ -54,9 +54,8 @@ public class ServiceGenerator {
 
 ```kotlin
 fun 메소드명() : Unit{
-    var retrofit = ServiceGenerator.retrofit
-    var service = retrofit.create(인터페이스명.class)
-    var call : Call<클래스명2> = service.getMap("토큰")
+    var retrofit = ServiceGenerator.createService(인터페이스명.class)
+    var call : Call<클래스명2> = retrofit.getMap("토큰")
     call.enqueue(object : Callback<클래스명2>{
         override fun onResponse(call : Call<클래스명2>, response : Response<클래스명2>){
             val repo : 클래스명2 = response.body() //repo.getMap()
