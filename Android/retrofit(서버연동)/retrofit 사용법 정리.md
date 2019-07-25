@@ -11,13 +11,15 @@ dependencies{
 }
 ```
 
-- 가져올 데이터클래스
 
 
+- VO
 
 ```kotlin
 class 클래스명2(val map : JsonObject, val myTeam : Int, val myTeamColor : String)
 ```
+
+
 
 - API 인터페이스
 
@@ -29,6 +31,8 @@ public interface 인터페이스명{
     );
 }
 ```
+
+
 
 - URL 설정
 
@@ -50,6 +54,8 @@ public class ServiceGenerator {
 }
 ```
 
+
+
 - 데이터 가져오기
 
 ```kotlin
@@ -66,6 +72,8 @@ fun 메소드명() : Unit{
     })
 }
 ```
+
+
 
 - 순회
 
