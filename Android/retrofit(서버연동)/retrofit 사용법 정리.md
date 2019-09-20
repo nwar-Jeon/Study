@@ -8,6 +8,7 @@
 dependencies{
     implementation 'com.squareup.retrofit2:retrofit:{version}'
     implementation 'com.squareup.retrofit2:converter-gson:{version}'
+      implementation 'com.squareup.retrofit2:adapter-rxjava2:${rxjava_version}' // retrofit을 rxjava로 사용.
 }
 ```
 
